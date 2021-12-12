@@ -25,7 +25,9 @@ def set_log_config(logger, dir, filename):
     logger.addHandler(handler2)
     logger.propagate = False
 
-if __name__ == '__main__':    
+# To check module operation
+if __name__ == '__main__':
+    
     dir = './Log/'
     logger = getLogger(__name__)
     set_log_config(logger, dir, 'log_filename.log' )
@@ -36,6 +38,9 @@ if __name__ == '__main__':
         logger.warn('Test: warn')
         logger.error('Test: error')
         logger.critical('Test: critical')
+        
+        # NameError: name 'b' is not defined
         a = b
+
     except Exception as e:
         logger.exception('Test: exception')
